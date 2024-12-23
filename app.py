@@ -6,7 +6,9 @@ app = Flask(__name__)
 def print_ip():
     ip_route = request.headers.get("X-Forwarded-For")
     user_ip = ip_route.split(',')[0].strip()
-    return user_ip
+
+    user = request.user_agent
+    return user_ip + user
 
 if __name__ == '__main__':
     app.run()
