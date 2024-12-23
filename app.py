@@ -8,7 +8,7 @@ def print_ip():
     user_ip = ip_route.split(',')[0].strip()
 
     user = request.user_agent
-    return user_ip + user
+    return user_ip + str(user)
 
 if __name__ == '__main__':
     app.run()
