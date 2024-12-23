@@ -7,8 +7,8 @@ def print_ip():
     ip_route = request.headers.get("X-Forwarded-For")
     user_ip = ip_route.split(',')[0].strip()
 
-    user = request.user_agent
-    return user_ip + str(user)
+    user_agent = str(request.user_agent)
+    return user_ip + '\n\n' + user_agent
 
 if __name__ == '__main__':
     app.run()
